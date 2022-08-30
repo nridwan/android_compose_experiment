@@ -14,6 +14,8 @@ apply<AndroidDefault>()
 android {
     defaultConfig {
         applicationId = "com.nridwan.compose"
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
@@ -31,5 +33,5 @@ dependencies {
     featureModule(true)
     proto()
     retrofit()
-    implementation(project(Modules.coreUi))
+    allFeatures()
 }

@@ -17,19 +17,14 @@ class RootActivity : ComponentActivity() {
         setContent {
             ComposeTheme {
                 val navController = rememberNavController()
-
+                RootNavGraph(navController = navController)
             }
         }
     }
 }
 
-@Composable
-fun Greeting(text: String) {
-    Text(text = text)
-}
-
 @Preview
 @Composable
-fun PreviewGreeting() {
-    Greeting(text = "Hello World")
+fun Greeting() {
+    Text(text = "Hello World")
 }
