@@ -23,7 +23,7 @@ fun SplashScreen(navController: NavController) {
         scope.launch {
             delay(1000)
             navController.navigate(SharedNav.AUTH) {
-                popUpTo(navController.graph.findStartDestination().id) {
+                popUpTo(SharedNav.ROOT) {
                     inclusive = true
                 }
             }

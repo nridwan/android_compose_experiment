@@ -25,11 +25,7 @@ fun HomeScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Button(onClick = {
-                navController.navigate(HomeNavigation.Profile.route) {
-                    popUpTo(navController.graph.findStartDestination().id) {
-                        inclusive = true
-                    }
-                }
+                navController.navigate(HomeNavigation.Profile.route)
             }) {
                 Text("Profile")
             }
