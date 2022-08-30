@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-apply(from = "$rootDir/android_default.gradle.kts")
+apply<AndroidDefault>()
 
 dependencies {
     uiModule(true)

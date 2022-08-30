@@ -9,7 +9,7 @@ plugins {
 
     id("com.google.protobuf")
 }
-//apply<AndroidDefault>()
+apply<AndroidDefault>()
 
 android {
     defaultConfig {
@@ -31,4 +31,5 @@ dependencies {
     featureModule(true)
     proto()
     retrofit()
+    implementation(project(Modules.coreUi))
 }
