@@ -12,7 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-includeBuild("subpm")
 rootProject.name = "Compose"
 include(":app")
 include(":core:ui")

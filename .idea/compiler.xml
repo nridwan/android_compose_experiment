@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-<<<<<<< HEAD
-    <bytecodeTargetLevel target="17">
-      <module name="android_compose_experiment.buildSrc" target="1.8" />
-      <module name="android_compose_experiment.buildSrc.main" target="1.8" />
-      <module name="android_compose_experiment.buildSrc.test" target="1.8" />
-      <module name="Compose.buildSrc" target="11" />
-      <module name="Compose.buildSrc.main" target="11" />
-      <module name="Compose.buildSrc.test" target="11" />
-=======
-    <bytecodeTargetLevel target="11">
-      <module name="Compose.buildSrc" target="1.8" />
-      <module name="Compose.buildSrc.main" target="1.8" />
-      <module name="Compose.buildSrc.test" target="1.8" />
->>>>>>> 3318dd8 (feat: integrate SubPM as gradle project)
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
