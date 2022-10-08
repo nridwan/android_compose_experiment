@@ -1,7 +1,3 @@
 @echo off
-set mode=install
-if "%*" == "" (
-    .\gradlew -b .\subpm\build.gradle.kts install
-) else (
-    .\gradlew -b .\subpm\build.gradle.kts %*
-)
+set script_dir=%~dp0
+java -jar %script_dir%\subpm.jar %*
