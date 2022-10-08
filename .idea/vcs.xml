@@ -6,5 +6,6 @@
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/feat/auth" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/feat/home" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pos" vcs="Git" />
   </component>
 </project>

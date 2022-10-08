@@ -18,7 +18,7 @@ abstract class SubPM : DefaultTask() {
     abstract val actionType: Property<String>
 
     init {
-        actionType.convention("hello from GreetingTask")
+        actionType.convention("install")
     }
 
     @TaskAction
@@ -37,22 +37,29 @@ abstract class SubPM : DefaultTask() {
                     println("File $path not found")
                 }
             }
-            val clone = when(actionType.get()) {
-                "update" -> false
-                else -> true
-            }
-            res.packages.forEach { (path: String?, url: String?) ->
-                clonePackage(File(cwd), path, url, clone)
-            }
+            res.packages.forEach(when(actionType.get()) {
+                "update" -> { (path, url) ->
+                    clonePackage(File(cwd), path, url)
+                }
+                "reset" ->  { (path, url) ->
+                    clonePackage(File(cwd), path, url, reset = true)
+                }
+                else -> { (path, url) ->
+                    clonePackage(File(cwd), path, url, clone = false)
+                }
+            })
         } catch (t: Throwable) {
             t.printStackTrace()
         }
     }
 
-    private fun clonePackage(cwd: File, path: String, url: String?, clone: Boolean) {
+    private fun clonePackage(cwd: File, path: String, url: String?, clone: Boolean = true, reset: Boolean = false) {
         if (url == null) return
         val urlParts = url.split("#").toTypedArray()
         val file = File(cwd, path)
+        if (reset && file.exists()) {
+            file.deleteRecursively()
+        }
         if (!file.exists() && clone) {
             try {
                 val builder = ProcessBuilder("git", "clone", urlParts[0], path)
