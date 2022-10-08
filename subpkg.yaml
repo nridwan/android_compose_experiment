@@ -1,0 +1,5 @@
+packages:
+  core: https://github.com/nridwan/android_compose_core.git#main
+  buildSrc: https://github.com/nridwan/android_compose_buildsrc.git#main
+  feat/home: https://github.com/nridwan/android_compose_feature_home.git#main
+  feat/auth: https://github.com/nridwan/android_compose_feature_auth.git#main
